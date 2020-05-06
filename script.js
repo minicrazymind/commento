@@ -4,21 +4,39 @@ let letters = ["a", "e", "i", "o", "u", "y", "q", "w", "r", "t", "p", "s", "d" ,
 let capLet = ["Q", "E", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D" ,"F", "G", "H", "J", "K", "L", "Z", "X", "C", "V", "B", "N", "M"];
 let colors = ["Tomato", "AliceBlue", "Azure", "CornflowerBlue", "DeepSkyBlue", "FloralWhite", "GhostWhite", "LightBlue", "LightCyan", "LightSkyBlue", "PaleTurquoise", "PowderBlue", "RoyalBlue", "SkyBlue", "SteelBlue", "White", "WhiteSmoke", "Silver", "DeepPink", "Fuchsia", "HotPink", "Ivory", "HoneyDew", "LavenderBlush", "LightPink", "LightCoral", "Pink", "PaleVioletRed", "Violet"];
 
-let presets = ["HAHAHAHA ", "Oh, my goodnesss ", "But I still don't get it ", "I literally can't rn xD ", "LOL XD ", "That's pretty funny, 5/7", "DID YOU JUST", "OMG IM SCREAMING", "bruh", "same", "But is that the whole story?", "4/20 blaze it ", "IM DEAD", "Laughs in laughing", "Wow really? No way.", "Sure, whatever you say", "Why are we friends again?", "That's a yikes from me bro", "I'm stealing this post", "Still a better love story than Twilight", "This guy gets it", "uwu"];
+let presets = ["HAHAHAHA ", "Oh, my goodnesss ", "But I still don't get it ", "I literally can't rn xD ", "LOL XD ", "That's pretty funny, 5/7", "DID YOU JUST", "OMG IM SCREAMING", "bruh", "same", "But is that the whole story?", "4/20 blaze it ", "IM DEAD", "Laughs in laughing", "Wow really? No way.", "Sure, whatever you say", "Why are we friends again?", "That's a yikes from me bro", "I'm stealing this post", "Still a better love story than Twilight", "This guy gets it", "uwu", "owo"];
+let randWords = [];
+
+
 
 var postButton = document.getElementById("post-button");
 //Buttons will now trigger functions
 postButton.addEventListener("click", post);
 
+//Counter variables for posts, comments, and friends
 let postNum = 1;
 let commentNum = 1;
+let friendNum = 1;
 
 let postInputBar = document.getElementById("post-input");
 
-postInputBar.setAttribute("width", "50");
-postInputBar.setAttribute("height", "20");
+// postInputBar.setAttribute("width", "50");
+// postInputBar.setAttribute("height", "20");
 
-changeBGColor();
+startup();
+
+//All functions that run on startup
+function startup() {
+  changeBGColor();
+
+  var frenNum = Math.floor(Math.random() * 8) + 2;
+
+  for (let i = 0; i < frenNum; i++) {
+    makeFriend();
+  }
+
+}
+
 
 function changeBGColor() {
   let background = document.body;
@@ -104,6 +122,7 @@ function post() {
   document.getElementById(currPostId).appendChild(para); //Apend to block
 
 
+  //Gets a random number of comments
   var commentNum = Math.floor(Math.random() * 4) + 2;
 
   for (let i = 0; i < commentNum; i++) {
@@ -162,4 +181,42 @@ function generateComment() {
 
 
   return output;
+}
+
+
+
+function makeFriend() {
+  //Name
+  var currFrenId = "friend" + friendNum;
+  friendNum = friendNum + 1;
+
+  var newDiv = document.createElement("DIV"); //Create new <div> element
+  newDiv.id = currFrenId; //give id to div
+
+  //New Div for comment
+  newDiv.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]; //give bg color to div
+  newDiv.style.padding = "10px";
+  newDiv.style.borderRadius = "15px"
+  newDiv.className += "friendBlock";
+  document.getElementById("friendsList").appendChild(newDiv); //add to contentGrid
+
+
+  //Profile picture
+  var image = document.createElement("IMG");   //Create an <img> element
+  image.src = "https://picsum.photos/" + Math.floor(Math.random() * 500);     //Image
+  image.className += "profilePic";
+  document.getElementById(currFrenId).appendChild(image);  // Append Image to our div
+
+  //Username
+  var username = document.createElement("H1");  //Create an <h1> element
+  username.innerHTML = generateName() + " " + generateName(); //Insert name
+  username.className += "usernameFren";
+  document.getElementById(currFrenId).appendChild(username);     // Append Header to our div
+
+
+  var para = document.createElement("P"); //Create a <p> element
+  para.innerHTML = "online"; //Insert text
+  para.className += "postText";
+  document.getElementById(currFrenId).appendChild(para); //Apend to block
+
 }

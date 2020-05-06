@@ -6,8 +6,51 @@ body {
   font-family: 'Patrick Hand', cursive;
 }
 
+h2 {
+  font-size: 3.3em;
+}
+
 #post-input {
   padding-bottom: 10vmin;
+}
+
+
+.topNav{
+  margin-top: -11px;
+  margin-left: -11px;
+  margin-right: -11px;
+  margin-bottom: 10vmin;
+  background-color: #66c2ff;
+  height: 15vh;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+
+  border-width: 2px;
+  border-color: white;
+  border-style: solid;
+}
+
+.topNavLogo {
+  padding: 10px;
+  grid-column-start: 0;
+  grid-column-end: span 1;
+  height: 100%;
+}
+
+.searchIcon {
+  padding-top: 5vmin;
+  padding-bottom: 5vmin;
+  padding-left: 15vmin; 
+  grid-column-start: 2;
+  grid-column-end: span 1;
+  height: 100%;
+}
+
+#search {
+  margin-top: 5vmin;
+  margin-bottom: 5vmin;
+  width: 100%;
+  grid-column-end: span 2;
 }
 
 .header{
@@ -17,19 +60,54 @@ body {
   align-items: center;
 }
 
+.header > img {
+  width: 40vw;
+}
+
 .mainContainer {
   margin-top: 5vmin;
   padding: 5vmin;
-  margin-left: 25vmin;
-  margin-right:25vmin;
+  margin-left: 50vmin;
+  margin-right:10vmin;
   background-color: #66c2ff;
   border-radius: 20px;
+
+  border-width: 2px;
+  border-color: white;
+  border-style: solid;
+}
+
+#friendsList {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-row-gap: 5vmin;
+  position: absolute;
+  width: 35vmin;
+  border-radius: 20px;
+  background-color: #66c2ff;
+  padding: 1.5vmin;
+
+  font-size: 0.6em;
+
+  border-width: 2px;
+  border-color: white;
+  border-style: solid;
 }
 
 .singlePost {
   margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
+  grid-column-gap: 1vmin;
+  border-width: 2px;
+  border-color: white;
+  border-style: solid;
+}
+
+
+.friendBlock {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 1vmin;
   border-width: 2px;
   border-color: white;
@@ -48,19 +126,28 @@ body {
 }
 
 .profilePic {
-  grid-column-start: 0;
   grid-column-end: span 1;
-  height: 100%;
+  width: 100%;
 }
+
 
 .username {
   grid-column-end: span 7;
+}
+
+.usernameFren {
+  grid-column-end: span 3;
 }
 
 .postText {
   grid-column-start: 0;
   grid-column-end: span 8;
   font-size: 2em;
+}
+
+.statusText {
+  grid-column-start: 0;
+  grid-column-end: span 1;
 }
 
 #posts {
