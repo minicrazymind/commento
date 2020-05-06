@@ -2,9 +2,9 @@ let vowels = ["a", "e", "i", "o", "u", "y"];
 let consnts = ["q", "w", "r", "t", "p", "s", "d" ,"f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"];
 let letters = ["a", "e", "i", "o", "u", "y", "q", "w", "r", "t", "p", "s", "d" ,"f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"];
 let capLet = ["Q", "E", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D" ,"F", "G", "H", "J", "K", "L", "Z", "X", "C", "V", "B", "N", "M"];
-let colors = ["Tomato", "AliceBlue", "Aqua", "Aquamarine", "Azure", "CornflowerBlue", "DeepSkyBlue", "FloralWhite", "GhostWhite", "LightBlue", "LightCyan", "LightSkyBlue", "PaleTurquoise", "PowderBlue", "RoyalBlue", "SkyBlue", "SteelBlue", "White", "WhiteSmoke", "Silver", "DeepPink", "Fuchsia", "HotPink", "Ivory", "HoneyDew", "LavenderBlush", "LightPink", "LightCoral", "Pink", "PaleVioletRed", "Violet"];
+let colors = ["Tomato", "AliceBlue", "Azure", "CornflowerBlue", "DeepSkyBlue", "FloralWhite", "GhostWhite", "LightBlue", "LightCyan", "LightSkyBlue", "PaleTurquoise", "PowderBlue", "RoyalBlue", "SkyBlue", "SteelBlue", "White", "WhiteSmoke", "Silver", "DeepPink", "Fuchsia", "HotPink", "Ivory", "HoneyDew", "LavenderBlush", "LightPink", "LightCoral", "Pink", "PaleVioletRed", "Violet"];
 
-let presets = ["HAHAHAHA ", "Oh, my goodnesss ", "But I still don't get it ", "I literally can't rn xD ", "LOL XD ", "That's pretty funny, 5/7", "DID YOU JUST", "OMG IM SCREAMING", "bruh", "same", "But is that the whole story?", "4/20 blaze it ", "IM DEAD", "Laughs in laughing", "Wow really? No way.", "Sure, whatever you say", "Why are we friends again?", "That's a yikes from me bro", "I'm stealing this post", "Still a better love story than Twilight" ];
+let presets = ["HAHAHAHA ", "Oh, my goodnesss ", "But I still don't get it ", "I literally can't rn xD ", "LOL XD ", "That's pretty funny, 5/7", "DID YOU JUST", "OMG IM SCREAMING", "bruh", "same", "But is that the whole story?", "4/20 blaze it ", "IM DEAD", "Laughs in laughing", "Wow really? No way.", "Sure, whatever you say", "Why are we friends again?", "That's a yikes from me bro", "I'm stealing this post", "Still a better love story than Twilight", "This guy gets it", "uwu"];
 
 var postButton = document.getElementById("post-button");
 //Buttons will now trigger functions
@@ -143,7 +143,7 @@ function comment() {
 
   //Username
   var username = document.createElement("H1");  //Create an <h1> element
-  username.innerHTML = generateName(); //Insert name
+  username.innerHTML = generateName() + " " + generateName(); //Insert name
   username.className += "username";
   document.getElementById(currComId).appendChild(username);     // Append Header to our div
 
