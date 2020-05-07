@@ -245,7 +245,7 @@ function makeFriend() {
   //Profile picture
   var image = document.createElement("IMG");   //Create an <img> element
   image.src = "https://picsum.photos/" + Math.floor(Math.random() * 500);     //Image
-  image.className += "profilePic";
+  image.className += "profilePicFren";
   document.getElementById(currFrenId).appendChild(image);  // Append Image to our div
 
   //Username

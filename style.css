@@ -16,7 +16,7 @@ h2 {
 }
 
 
-.topNav{
+.topNav {
   margin-top: -11px;
   margin-left: -11px;
   margin-right: -11px;
@@ -108,6 +108,7 @@ h2 {
   border-radius: 20px;
   background-color: #66c2ff;
   padding: 1.5vmin;
+  margin-top: 5vmin;
 
   font-size: 0.6em;
 
@@ -134,6 +135,7 @@ h2 {
   border-width: 2px;
   border-color: white;
   border-style: solid;
+  width: 100%;
 }
 
 .singleComment {
@@ -148,6 +150,11 @@ h2 {
 }
 
 .profilePic {
+  grid-column-end: span 1;
+  width: 100%;
+}
+
+.profilePicFren {
   grid-column-end: span 1;
   width: 100%;
 }
@@ -219,4 +226,81 @@ h2 {
   background-color: black;
   border-color: #ff0000;
   color:#ff0000
+}
+
+@media only screen and (max-width: 992px){
+
+.topNavLogo {
+  height: 20vmin;
+}
+
+.topNav {
+  height: 20vh;
+  grid-column-gap: 1vmin;
+}
+
+
+.mainContainer {
+  margin-top: 5vmin;
+  padding: 5vmin;
+  margin-left: 40vmin;
+  margin-right:5vmin;
+  background-color: #66c2ff;
+  border-radius: 20px;
+
+  border-width: 2px;
+  border-color: white;
+  border-style: solid;
+}
+
+.postText {
+  grid-column-start: 0;
+  grid-column-end: span 8;
+  font-size: 1.5em;
+}
+
+
+.username {
+  font-size: 2em;
+  grid-column-end: span 5;
+}
+
+.profilePic {
+  grid-column-end: span 2;
+  width: 100%;
+}
+
+.profilePicFren {
+  grid-column-end: span 2;
+  width: 75%;
+}
+
+#search {
+  margin-top: 7vmin;
+  margin-bottom: 5vmin;
+  width: 20vmin;
+  height: 5vmin;
+  grid-column-end: span 2;
+}
+
+.fakeButtons {
+  padding-top: 5vmin;
+  font-size: 1.2em;
+}
+
+.fakeButtons.dark {
+  padding-top: 5vmin;
+  font-size: 1.2em;
+}
+
+.fakeButtons.profile {
+  grid-column-start: 7;
+  grid-column-end: 9;
+}
+
+.fakeButtons.signOut {
+  grid-column-start: 9;
+  grid-column-end: 11;
+}
+
 }
